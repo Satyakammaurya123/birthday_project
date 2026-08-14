@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+/* Birthday photo animations */
+
+.photo-fade {
+  animation: birthdayFade 1s ease-out;
+}
+
+.photo-zoom {
+  animation: birthdayZoom 1s ease-out;
+}
+
+.photo-flip {
+  animation: birthdayFlip 1s ease-out;
+}
+
+.photo-slide {
+  animation: birthdaySlide 1s ease-out;
+}
+
+.photo-blur {
+  animation: birthdayBlur 1.2s ease-out;
+}
+
+@keyframes birthdayFade {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes birthdayZoom {
+  from {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes birthdayFlip {
+  from {
+    opacity: 0;
+    transform: perspective(1000px) rotateY(90deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: perspective(1000px) rotateY(0);
+  }
+}
+
+@keyframes birthdaySlide {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes birthdayBlur {
+  from {
+    opacity: 0;
+    filter: blur(15px);
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: scale(1);
+  }
+}
