@@ -14,27 +14,27 @@ const photos = [
   {
     src: image1,
     animation: "fade",
-    message: "Happy Birthday! to you my love 💖",
+    message: "Happy Birthday! to you my special one 💖",
   },
   {
     src: image2,
     animation: "zoom",
-    message: "Happy Birthday! my love 💕",
+    message: "Happy Birthday! my special one 💕",
   },
   {
     src: image3,
     animation: "flip",
-    message: "Happy Birthday! my love ✨",
+    message: "Happy Birthday! my special one ✨",
   },
   {
     src: image4,
     animation: "slide",
-    message: "Happy Birthday! my love 🥰",
+    message: "Happy Birthday! my special one 🥰",
   },
   {
     src: image5,
     animation: "blur",
-    message: "Happy Birthday! my love ❤️",
+    message: "Happy Birthday! my special one ❤️",
   },
 ];
 
