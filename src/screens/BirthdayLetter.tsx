@@ -68,7 +68,7 @@ function BirthdayLetter() {
           </p>
 
           <p className="mt-5">
-            It's your Day, my love, so <span className="font-bold text-rose-500">ENJOY!!</span> it fully. ❤️
+            It's your Day, so <span className="font-bold text-rose-500">ENJOY!!</span> it fully. ❤️
           </p>
 
         </div>
@@ -85,7 +85,7 @@ function BirthdayLetter() {
           </div>
 
           <p className="mt-2 text-xs tracking-widest text-rose-300">
-            HAPPY BIRTHDAY MY LOVE
+            HAPPY BIRTHDAY MY SPECIAL ONE 
           </p>
 
         </div>
