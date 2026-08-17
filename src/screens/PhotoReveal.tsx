@@ -1,32 +1,38 @@
 import { useState } from "react";
 
+import image1 from "../assets/images/happy _bday.jpeg";
+import image2 from "../assets/images/door_pic.jpeg";
+import image3 from "../assets/images/red_pic.jpeg";
+import image4 from "../assets/images/sitting.jpeg";
+import image5 from "../assets/images/earphone.jpeg";
+
 interface PhotoRevealProps {
   onComplete: () => void;
 }
 
 const photos = [
   {
-    src: "/src/assets/images/happy _bday.jpeg",
+    src: image1,
     animation: "fade",
     message: "Happy Birthday! to you my love 💖",
   },
   {
-    src: "/src/assets/images/door_pic.jpeg",
+    src: image2,
     animation: "zoom",
     message: "Happy Birthday! my love 💕",
   },
   {
-    src: "/src/assets/images/red_pic.jpeg",
+    src: image3,
     animation: "flip",
     message: "Happy Birthday! my love ✨",
   },
   {
-    src: "/src/assets/images/sitting.jpeg",
+    src: image4,
     animation: "slide",
     message: "Happy Birthday! my love 🥰",
   },
   {
-    src: "/src/assets/images/earphone.jpeg",
+    src: image5,
     animation: "blur",
     message: "Happy Birthday! my love ❤️",
   },
@@ -52,12 +58,12 @@ function PhotoReveal({ onComplete }: PhotoRevealProps) {
       className="relative flex min-h-screen w-full cursor-pointer items-center justify-center overflow-hidden bg-black"
     >
       {/* Photo */}
-        <img
+      <img
         key={currentPhoto}
         src={photo.src}
         alt={`Birthday memory ${currentPhoto + 1}`}
         className={`max-h-[82vh] max-w-full object-contain photo-${photo.animation}`}
-        />
+      />
 
       {/* Dark gradient */}
       <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/20" />
