@@ -5,7 +5,7 @@ import SurpriseReady from "./screens/SurpriseReady";
 import PhotoReveal from "./screens/PhotoReveal";
 import BirthdayLetter from "./screens/BirthdayLetter";
 
-import birthdayMusic from "./assets/music/sub_clair-happy-birthday-578363.mp3";
+import birthdayMusic from "./assets/music/paris_in_december.mp3";
 
 function App() {
   const [screen, setScreen] = useState("unlock");

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 
-import birthdayMusic from "../assets/music/sub_clair-happy-birthday-578363.mp3";
+import birthdayMusic from "../assets/music/paris_in_december.mp3";
 
 interface BirthdayMusicProps {
   play: boolean;
