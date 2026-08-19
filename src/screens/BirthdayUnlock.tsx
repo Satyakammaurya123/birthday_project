@@ -10,10 +10,32 @@ function BirthdayUnlock({ onUnlock }: BirthdayUnlockProps) {
   const [error, setError] = useState("");
 
   // Temporary DOB for testing
-  const correctDob = "01012000";
+  // Actual DOB: 01-01-2000
+  const correctDob = "27082002";
+
+  const handleDobChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    // Keep only numbers
+    let value = e.target.value.replace(/\D/g, "");
+
+    // Maximum 8 digits: DDMMYYYY
+    value = value.slice(0, 8);
+
+    // Automatically add hyphens
+    if (value.length > 4) {
+      value = `${value.slice(0, 2)}-${value.slice(2, 4)}-${value.slice(4)}`;
+    } else if (value.length > 2) {
+      value = `${value.slice(0, 2)}-${value.slice(2)}`;
+    }
+
+    setDob(value);
+    setError("");
+  };
 
   const handleUnlock = () => {
-    if (dob === correctDob) {
+    // Remove hyphens before checking
+    const cleanDob = dob.replace(/-/g, "");
+
+    if (cleanDob === correctDob) {
       setError("");
       onUnlock();
     } else {
@@ -44,6 +66,7 @@ function BirthdayUnlock({ onUnlock }: BirthdayUnlockProps) {
       {/* Main card */}
       <div className="relative w-full max-w-sm rounded-3xl bg-white/70 p-7 text-center shadow-2xl backdrop-blur-md">
 
+        {/* Heart icon */}
         <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-full bg-pink-100">
           <Heart
             className="fill-pink-500 text-pink-500"
@@ -51,6 +74,7 @@ function BirthdayUnlock({ onUnlock }: BirthdayUnlockProps) {
           />
         </div>
 
+        {/* Heading */}
         <h1 className="text-3xl font-bold text-rose-600">
           A Little Surprise 💖
         </h1>
@@ -68,19 +92,15 @@ function BirthdayUnlock({ onUnlock }: BirthdayUnlockProps) {
           <input
             type="text"
             inputMode="numeric"
-            maxLength={8}
+            maxLength={10}
             value={dob}
-            onChange={(e) => {
-              const value = e.target.value.replace(/\D/g, "");
-              setDob(value);
-              setError("");
-            }}
-            placeholder="DDMMYYYY"
-            className="w-full rounded-2xl border border-pink-200 bg-white px-4 py-4 text-center text-lg tracking-[0.2em] text-gray-700 outline-none transition focus:border-pink-400 focus:ring-2 focus:ring-pink-200"
+            onChange={handleDobChange}
+            placeholder="DD-MM-YYYY"
+            className="w-full rounded-2xl border border-pink-200 bg-white px-4 py-4 text-center text-lg tracking-[0.15em] text-gray-700 outline-none transition focus:border-pink-400 focus:ring-2 focus:ring-pink-200"
           />
         </div>
 
-        {/* Error */}
+        {/* Error message */}
         {error && (
           <p className="mt-3 text-sm font-medium text-rose-500">
             {error}
@@ -96,8 +116,9 @@ function BirthdayUnlock({ onUnlock }: BirthdayUnlockProps) {
           Unlock My Surprise
         </button>
 
+        {/* Footer */}
         <p className="mt-5 text-xs text-gray-400">
-          Made with love ❤️
+          A little surprise, just for you ✨
         </p>
 
       </div>
